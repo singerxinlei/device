@@ -117,7 +117,11 @@ void Delete()
    if(find(&p,&q,&num)!=0)
    {
        printf("设备信息已被删除");
-       p->next=q->next;
+       if (p!=NULL) {
+           p->next=q->next;
+       }else{
+           head=q->next;
+       }
        free(q);
    }
 }
