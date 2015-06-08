@@ -9,7 +9,7 @@ struct device *creatnode(void)
         p->next=NULL;
     else
         {
-            printf("ç©ºé—´ä¸è¶³æ— æ³•å‚¨å­˜ä¿¡æ¯");
+            printf("¿Õ¼ä²»×ãÎÞ·¨´¢´æÐÅÏ¢");
             return NULL;
         }
     return p;
@@ -36,29 +36,29 @@ void insert()
     pdevice prev,cur,p;
     if((p=creatnode())!=NULL)
     {
-        printf("è¯·è¾“å…¥è®¾å¤‡ç¼–å·\n");
+        printf("ÇëÊäÈëÉè±¸±àºÅ\n");
         scanf("%d",&(p->serialNum));
         if(find(&prev,&cur,&(p->serialNum))==1)
         {
-        printf("æ‚¨è¾“å…¥çš„ç¼–å·å·²å­˜åœ¨ï¼\n");
+        printf("ÄúÊäÈëµÄ±àºÅÒÑ´æÔÚ£¡\n");
         return;
         }
         getchar();
-        printf("è¯·è¾“å…¥è®¾å¤‡åç§°\n");
+        printf("ÇëÊäÈëÉè±¸Ãû³Æ\n");
         gets(p->name);
-        printf("è¯·è¾“å…¥è®¾å¤‡æ‰€åœ¨å®žéªŒå®¤åç§°\n");
+        printf("ÇëÊäÈëÉè±¸ËùÔÚÊµÑéÊÒÃû³Æ\n");
         gets(p->position);
-        printf("è¯·è¾“å…¥ä½¿ç”¨è€…å§“å\n");
+        printf("ÇëÊäÈëÊ¹ÓÃÕßÐÕÃû\n");
         gets(p->user);
-        printf("è¯·è¾“å…¥è®¾å¤‡ä»·æ ¼\n");
+        printf("ÇëÊäÈëÉè±¸¼Û¸ñ\n");
         scanf("%lf",&(p->price));
         getchar();
-        printf("è¯·è¾“å…¥è®¾å¤‡ç§ç±»\n");
+        printf("ÇëÊäÈëÉè±¸ÖÖÀà\n");
         gets(p->Class);
         insert_type(p->Class);
-        printf("è¯·è¾“å…¥è®¾å¤‡è´­ä¹°æ—¥æœŸï¼Œå¦‚20090101\n");
+        printf("ÇëÊäÈëÉè±¸¹ºÂòÈÕÆÚ£¬Èç20090101\n");
         gets(p->date);
-        if(prev==NULL)//å¤´æ’
+        if(prev==NULL)//Í·²å
         {
             p->next=head;
             head=p;
@@ -75,24 +75,24 @@ void change()
 {
     pdevice p=NULL,q=NULL;
     int num;
-    printf("è¯·è¾“å…¥è®¾å¤‡ç¼–å·\n");
+    printf("ÇëÊäÈëÉè±¸±àºÅ\n");
     scanf("%d",&num);
     if(find(&p,&q,&num)==0)
     {
-        printf("è¯¥ç¼–å·ä¸å­˜åœ¨è¯·é‡æ–°è¾“å…¥");
+        printf("¸Ã±àºÅ²»´æÔÚÇëÖØÐÂÊäÈë");
         return;
     }
 
     for(;;)
     {
-        printf("è¯·é€‰æ‹©ä¿®æ”¹é¡¹ç›®ï¼ˆç¼–å·ä¸å¯ä¿®æ”¹ï¼‰\n");
-        printf("ä¿®æ”¹è®¾å¤‡åç§°è¾“å…¥1\nä¿®æ”¹è®¾å¤‡æ‰€åœ¨å®žéªŒå®¤è¾“å…¥2\nä¿®æ”¹ä½¿ç”¨è€…å§“åè¾“å…¥3\nä¿®æ”¹è®¾å¤‡ä»·æ ¼è¾“å…¥4\nä¿®æ”¹è®¾å¤‡ç§ç±»è¾“å…¥5\nä¿®æ”¹è®¾å¤‡è´­ä¹°æ—¥æœŸè¾“å…¥6\n");
-        printf("ä¸å†è¿›è¡Œä¿®æ”¹è¾“å…¥7\n");
+        printf("ÇëÑ¡ÔñÐÞ¸ÄÏîÄ¿£¨±àºÅ²»¿ÉÐÞ¸Ä£©\n");
+        printf("ÐÞ¸ÄÉè±¸Ãû³ÆÊäÈë1\nÐÞ¸ÄÉè±¸ËùÔÚÊµÑéÊÒÊäÈë2\nÐÞ¸ÄÊ¹ÓÃÕßÐÕÃûÊäÈë3\nÐÞ¸ÄÉè±¸¼Û¸ñÊäÈë4\nÐÞ¸ÄÉè±¸ÖÖÀàÊäÈë5\nÐÞ¸ÄÉè±¸¹ºÂòÈÕÆÚÊäÈë6\n");
+        printf("²»ÔÙ½øÐÐÐÞ¸ÄÊäÈë7\n");
         int a;
         scanf("%d",&a);
         getchar();
         if(a!=7)
-            printf("è¯·è¾“å…¥ä¿®æ”¹åŽçš„ä¿¡æ¯ï¼š\n");
+            printf("ÇëÊäÈëÐÞ¸ÄºóµÄÐÅÏ¢£º\n");
         getchar();
         switch(a)
         {
@@ -100,7 +100,7 @@ void change()
         case 2:gets(q->position);break;
         case 3:gets(q->user);break;
         case 4:scanf("%lf",&(q->price));getchar();break;
-        case 5:delete_type(q->Class);gets(q->Class);insert_type(q->Class);break;//è®¾å¤‡ç§ç±»
+        case 5:delete_type(q->Class);gets(q->Class);insert_type(q->Class);break;//Éè±¸ÖÖÀà
         case 6:gets(q->date);break;
         }
         if(a==7)
@@ -112,24 +112,20 @@ void Delete()
 {
    pdevice p=NULL,q=NULL;
    int num;
-   printf("è¯·è¾“å…¥è®¾å¤‡ç¼–å·\n");
+   printf("ÇëÊäÈëÉè±¸±àºÅ\n");
    scanf("%d",&num);
    if(find(&p,&q,&num)!=0)
    {
-       printf("è®¾å¤‡ä¿¡æ¯å·²è¢«åˆ é™¤");
-       if(p!=NULL){
-            p->next=q->next;
-       }else{
-           head=q->next;
-       }
+       printf("Éè±¸ÐÅÏ¢ÒÑ±»É¾³ý");
+       p->next=q->next;
        free(q);
    }
 }
 void Search ()
 {
-    printf("è¯·é€‰æ‹©æŸ¥è¯¢æ–¹å¼\n");
-    printf("æŒ‰ç¼–å·æŸ¥è¯¢è¯·è¾“å…¥1æŒ‰ä»·æ ¼æŸ¥è¯¢è¯·è¾“å…¥2");
-    printf("å…¶ä»–æ–¹å¼æŸ¥è¯¢è¯·è¾“å…¥3");
+    printf("ÇëÑ¡Ôñ²éÑ¯·½Ê½\n");
+    printf("°´±àºÅ²éÑ¯ÇëÊäÈë1°´¼Û¸ñ²éÑ¯ÇëÊäÈë2");
+    printf("ÆäËû·½Ê½²éÑ¯ÇëÊäÈë3");
     int a,m;
     double b;
     pdevice p;
@@ -138,7 +134,7 @@ void Search ()
     getchar();
     if(a==1)
     {
-        printf("è¯·è¾“å…¥ç¼–å·\n");
+        printf("ÇëÊäÈë±àºÅ\n");
         scanf("%d",&m);
         for(p=head;p!=NULL;p=p->next)
         {
@@ -148,7 +144,7 @@ void Search ()
     }
     else if(a==2)
     {
-        printf("è¯·è¾“å…¥ä»·æ ¼\n");
+        printf("ÇëÊäÈë¼Û¸ñ\n");
         scanf("%lf",&b);
         for(p=head;p!=NULL;p=p->next);
         {
@@ -162,7 +158,7 @@ void Search ()
     }
     else if(a==3)
     {
-        printf("è¯·è¾“å…¥æŸ¥è¯¢ä¾æ®\n");
+        printf("ÇëÊäÈë²éÑ¯ÒÀ¾Ý\n");
         gets(information);
         for(p=head;p!=NULL;p=p->next)
         {
@@ -173,7 +169,7 @@ void Search ()
 }
 void print(pdevice p)
 {
-    printf("è®¾å¤‡åç§°ï¼š%s\nè®¾å¤‡ç¼–å·ï¼š%d\nè®¾å¤‡æ‰€åœ¨å®žéªŒå®¤åç§°ï¼š%s\nä½¿ç”¨è€…å§“åï¼š%s\nè®¾å¤‡ä»·æ ¼ï¼š%lf\nè®¾å¤‡ç§ç±»ï¼š%s\nè®¾å¤‡è´­ä¹°æ—¥æœŸï¼š%s\n",p->name,p->serialNum,p->position,p->user,p->price,p->Class,p->date);
+    printf("Éè±¸Ãû³Æ£º%s\nÉè±¸±àºÅ£º%d\nÉè±¸ËùÔÚÊµÑéÊÒÃû³Æ£º%s\nÊ¹ÓÃÕßÐÕÃû£º%s\nÉè±¸¼Û¸ñ£º%lf\nÉè±¸ÖÖÀà£º%s\nÉè±¸¹ºÂòÈÕÆÚ£º%s\n",p->name,p->serialNum,p->position,p->user,p->price,p->Class,p->date);
 
 }
 void insert_type(char *a)
@@ -183,7 +179,7 @@ void insert_type(char *a)
         first=malloc(sizeof(struct type));
         if(first==NULL)
            {
-                printf("ç©ºé—´ä¸è¶³ï¼Œæ— æ³•å‚¨å­˜ä¿¡æ¯");
+                printf("¿Õ¼ä²»×ã£¬ÎÞ·¨´¢´æÐÅÏ¢");
                 return;
            }
         first->next=NULL;
